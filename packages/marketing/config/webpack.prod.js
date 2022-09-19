@@ -21,9 +21,6 @@ const prodConfig = {
     }),
   ],
   devtool: "inline-source-map",
-  optimization: {
-    splitChunks: false,
-  },
 };
 
 module.exports = merge(commonConfig, prodConfig);
