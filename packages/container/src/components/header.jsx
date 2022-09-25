@@ -97,11 +97,11 @@ export default function Header({ signedIn, onSignOut }) {
 }
 
 Header.propTypes = {
-  signedIn: PropTypes.func,
+  signedIn: PropTypes.bool,
   onSignOut: PropTypes.func,
 };
 
 Header.defaultProps = {
-  signedIn: () => {},
+  signedIn: false,
   onSignOut: () => {},
 };
