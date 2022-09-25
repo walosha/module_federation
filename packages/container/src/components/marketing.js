@@ -8,15 +8,15 @@ export default function marketing() {
   const ref = useRef(null);
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
-      onNavigate: ({ pathname: nextPathName }) => {
+      onNavigate: ({ pathname: nextPathname }) => {
         const { pathname } = history.location;
-        if (pathname !== nextPathName) {
-          history.push(nextPathName);
+        console.log("container", { pathname, nextPathname });
+        if (pathname !== nextPathname) {
+          history.push(nextPathname);
         }
       },
     });
     history.listen(onParentNavigate);
   }, []);
-
   return <div ref={ref} />;
 }
