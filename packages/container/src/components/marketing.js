@@ -4,7 +4,6 @@ import { mount } from "marketing/MarketingApp";
 
 export default function marketing() {
   const ref = useRef(null);
-
   useEffect(() => {
     mount(ref.current);
   }, []);
