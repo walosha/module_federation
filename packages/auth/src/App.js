@@ -16,7 +16,14 @@ export default function App({ history }) {
     <StylesProvider generateClassName={generateClassName}>
       <Router history={history}>
         <Switch>
-          <Route path="/auth/signIn" component={SignIn} />
+          <Route
+            exact
+            path="/"
+            component={() => (
+              <h1 onClick={() => history.push("/auth/signup")}>HELLO AUTH</h1>
+            )}
+          />
+          <Route path="/auth/signin" component={SignIn} />
           <Route path="/auth/signup" component={Signup} />
         </Switch>
       </Router>
