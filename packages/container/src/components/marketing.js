@@ -11,7 +11,6 @@ export default function Marketing() {
       initialPath: history.location.pathname,
       onNavigate: ({ pathname: nextPathname }) => {
         const { pathname } = history.location;
-        console.log("container", { pathname, nextPathname });
         if (pathname !== nextPathname) {
           history.push(nextPathname);
         }
