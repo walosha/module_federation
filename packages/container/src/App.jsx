@@ -1,25 +1,31 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import {
   StylesProvider,
   createGenerateClassName,
 } from "@material-ui/core/styles";
 import Header from "./components/header";
-import MarkingApp from "./components/marketing";
-import AuthApp from "./components/auth";
+// import Loader from "./components/loader";
+
+// Lazily loaded micro-frontends
+const MarkingAppLazy = lazy(() => import("./components/marketing"));
+const AuthAppLazy = lazy(() => import("./components/auth"));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: "conatainer",
 });
+
 export default function App() {
   return (
     <StylesProvider generateClassName={generateClassName}>
       <BrowserRouter>
         <Header />
-        <Switch>
-          <Route path="/auth" component={AuthApp} />
-          <Route path="/" component={MarkingApp} />
-        </Switch>
+        <Suspense fallback={<div>Loading</div>}>
+          <Switch>
+            <Route path="/auth" component={AuthAppLazy} />
+            <Route path="/" component={MarkingAppLazy} />
+          </Switch>
+        </Suspense>
       </BrowserRouter>
     </StylesProvider>
   );
