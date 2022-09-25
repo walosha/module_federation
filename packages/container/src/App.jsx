@@ -17,8 +17,8 @@ export default function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path="/auth" component={<MarkingApp />} />
-          <Route path="/" component={<AuthApp />} />
+          <Route path="/auth" component={AuthApp} />
+          <Route path="/" component={MarkingApp} />
         </Switch>
       </BrowserRouter>
     </StylesProvider>

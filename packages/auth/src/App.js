@@ -17,7 +17,7 @@ export default function App({ history }) {
       <Router history={history}>
         <Switch>
           <Route path="/auth/signIn" component={SignIn} />
-          <Route path="/auth/signout" component={Signup} />
+          <Route path="/auth/signup" component={Signup} />
         </Switch>
       </Router>
     </StylesProvider>
