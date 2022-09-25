@@ -2,7 +2,8 @@
   "name": "auth",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack serve --config config/webpack.dev.js --mode development --env=development"
+    "start": "webpack serve --config config/webpack.dev.js --mode development --env=development",
+    "build": "webpack  --config config/webpack.prod.js"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
