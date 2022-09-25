@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Router, Switch } from "react-router-dom";
 import {
   StylesProvider,
   createGenerateClassName,
@@ -11,15 +11,15 @@ const generateClassName = createGenerateClassName({
   productionPrefix: "marketing",
 });
 
-export default function App() {
+export default function App({ history }) {
   return (
     <StylesProvider generateClassName={generateClassName}>
-      <BrowserRouter>
+      <Router history={history}>
         <Switch>
           <Route exact path="/pricing" component={PricingPage} />
           <Route path="/" component={LandinPage} />
         </Switch>
-      </BrowserRouter>
+      </Router>
     </StylesProvider>
   );
 }
